@@ -1,0 +1,36 @@
+def Calculator():
+    print('Welcome to The Calculator.')
+    cont = 'y'
+    keep = 'n'
+    def continueprompt():
+        cont = input('Would you like to continue? \n(y for yes, n for no): ')
+        keep = input('would you like to keep the value? \n(y for yes, n for no): ')
+        if keep == 'y':
+            n1 = equal
+                
+
+    while cont == 'y':
+        if keep =='n':
+            n1 = float(input('Select your number: '))
+        op = input('Select your operator (+, -, *, /): ')
+        n2 = float(input('Select your number: '))
+        equal = 0
+
+        if op == '+':
+            equal = n1 + n2
+            print(equal)
+            continueprompt()
+        elif op == '-':
+            equal = n1 - n2
+            print(equal)
+            continueprompt()
+        elif op == '*':
+            equal = n1 * n2
+            print(equal)
+            continueprompt()
+        elif op == '/':
+            equal = n1 / n2
+            print(equal)
+            continueprompt()
+
+Calculator()
