@@ -1,0 +1,55 @@
+def Prime_Number_Finder():
+    num = int(input("Enter a number: "))
+    divisor  = 2
+    remainder = 0
+    prime = True
+
+    while prime == True and divisor < num:
+        remainder = num % divisor
+        if remainder > 0:
+            divisor = divisor + 1
+            print (remainder)
+        else:
+            print('Not a prime number')
+            prime = False
+            break
+
+    if prime == True:
+        print('It is a prime number')
+    else:
+        pass
+
+Prime_Number_Finder()
+
+def Prime_Number_List():
+    up_to_num = int(input("Enter a number: "))
+    num = 2
+    divisor = 2
+    remainder = 0
+    prime = False
+
+    while up_to_num >= num: 
+            remainder = num % divisor
+            if remainder > 0: # if we THINK its a prime 
+                prime = True 
+                while prime is True and num > divisor:
+                    divisor = divisor + 1 
+                    remainder = num % divisor
+                    if remainder > 0:
+                        continue
+                    elif num == divisor:
+                        break
+                    else:
+                        prime = False
+                if prime is True:
+                    print(num)
+                    divisor = 2
+                    num = num + 1
+                else:
+                    divisor = 2
+                    num = num + 1
+            else:
+                divisor = 2
+                num = num + 1
+
+Prime_Number_List()
