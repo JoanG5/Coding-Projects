@@ -1,0 +1,36 @@
+import random
+
+def play():
+    user_score = 0
+    computer_score = 0
+    win_score = int(input("What would you like the winning score to be?: "))
+
+    while win_score > user_score and win_score > computer_score:
+        user = input("R for rock, P for paper, and S for scissors ").lower()
+        computer = random.choice(['r', 'p', 's'])
+
+        while user == computer:
+            print(f'Computer choose {computer.upper()}\nTie\nScore:{user_score}\nComputer Score: {computer_score}')
+            computer = random.choice(['r', 'p', 's'])
+            user = input("R for rock, P for paper, and S for scissors ").lower()
+                
+
+        if is_win(user, computer):
+            user_score = user_score + 1
+            print(f'Computer choose {computer.upper()}\nYou win\nScore:{user_score}\nComputer Score: {computer_score}')
+        else:
+            computer_score = computer_score + 1
+            print(f'Computer choose {computer.upper()}\nYou lose\nScore:{user_score}\nComputer Score: {computer_score}')
+
+    if user_score == win_score:
+        return 'Congrats! You won!'
+    else:
+        return 'Damn... you stink'
+    
+
+def is_win(player, opponent):
+
+    if (player == 'r' and opponent == 's') or (player == 's' and opponent == 'p') or (player == 'p' and opponent == 'r'):
+        return True 
+
+print (play())
